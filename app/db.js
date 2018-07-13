@@ -1,12 +1,4 @@
-const uuidv1 = require("uuid/v1");
-
-function generateUUID() {
-  return uuidv1().replace(/-/g, "");
-}
-
 function defineModel(app, name, attributes) {
-  const { UUID, INTEGER } = app.Sequelize;
-
   let attrs = {};
   for (let key in attributes) {
     let value = attributes[key];

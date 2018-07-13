@@ -4,6 +4,11 @@ module.exports = app => {
   const { STRING, INTEGER, DATE, BOOLEAN } = app.Sequelize;
 
   const User = db.defineModel(app, "users", {
+    id: {
+      type: INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     username: { type: STRING, unique: true, allowNull: false }, // 用户名
     email: { type: STRING, unique: true, allowNull: false }, // 邮箱
     password: { type: STRING, allowNull: false }, // 密码

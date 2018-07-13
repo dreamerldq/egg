@@ -61,3 +61,20 @@ exports.view = {
     origin:'*',
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
   };
+
+
+exports.middleware = ['uppercase','gzip']
+exports.gzip = {
+  threshold: 1024,
+}
+  // module.exports = {
+  //   // 配置需要的中间件，数组顺序即为中间件的加载顺序
+  //   middleware: [ 'uppercase','gzip' ],
+  
+  //   // 配置 gzip 中间件的配置
+  //   gzip: {
+  //     threshold: 1024, // 小于 1k 的响应体不压缩
+  //   },
+
+  // };
+  
