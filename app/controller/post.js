@@ -26,9 +26,8 @@ class UserController extends Controller {
         const id = ((this.ctx.request.path).split('/'))[2];
         // const user = await this.app.mysql.get('user', {id: id})
         const post = await ctx.model.Post.findById(id)
-        console.log("获取到的用户是",post)
         if(post){
-            ctx.body = post.title
+            ctx.body = post.get('title')
         }else{
             ctx.body = '没有找到用户'
         }      

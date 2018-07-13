@@ -5,7 +5,7 @@ function generateUUID() {
 }
 
 function defineModel(app, name, attributes) {
-  const { UUID } = app.Sequelize;
+  const { UUID, INTEGER } = app.Sequelize;
 
   let attrs = {};
   for (let key in attributes) {
@@ -20,14 +20,6 @@ function defineModel(app, name, attributes) {
       };
     }
   }
-
-  attrs.id = {
-    type: UUID,
-    primaryKey: true,
-    defaultValue: () => {
-      return generateUUID();
-    }
-  };
 
   return app.model.define(name, attrs, {
     createdAt: "createdAt",
