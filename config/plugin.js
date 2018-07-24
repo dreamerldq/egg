@@ -14,6 +14,10 @@ exports.sequelize = {
   enable: true,
   package: "egg-sequelize"
 };
+exports.nodemailer = {
+  enable: true,
+  package: "nodemailer"
+};
 // exports.cors = {
 //   enable: true,
 //   package: 'egg-cors',
